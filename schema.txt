@@ -1,0 +1,36 @@
+┌─────────┐       1        ┌─────────┐      many       ┌─────────┐
+│  User   │───────────────▶│  Issue  │◀───────────────│ Authority│
+│---------│                 │---------│                 │---------│
+│ id      │                 │ id      │                 │ id      │
+│ name    │                 │ title   │                 │ name    │
+│ email   │                 │ desc    │                 │ email?  │
+│ password│                 │ status  │                 └─────────┘
+│ role    │                 │ lat     │
+│ issues  │◀───────────────│ lng     │
+└─────────┘                 │ reporterId │
+                             │ authorityId│
+                             │ createdAt  │
+                             │ updatedAt  │
+                             └───────────┘
+                                   │
+                                   │ many
+                                   ▼
+                             ┌─────────┐
+                             │ Comment │
+                             │---------│
+                             │ id      │
+                             │ text    │
+                             │ authorId│
+                             │ issueId │
+                             │ createdAt│
+                             └─────────┘
+                                    ▲
+                                    │ many
+                                    │
+                             ┌─────────┐
+                             │  Tag    │
+                             │---------│
+                             │ id      │
+                             │ name    │
+                             │ issues  │
+                             └─────────┘
